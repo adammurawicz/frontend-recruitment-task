@@ -10,6 +10,133 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
     font-size: 16px;
-    background-color: $myWhite;
+    line-height: 150%;
+    background-color: $myLight;
+}
+
+.container {
+    overflow: hidden;
+    padding: 1em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    max-height: 100vH;
+    overflow: hidden;
+}
+
+.btnBasic {
+    background-color: $Primary;
+    color: $myLight;
+    height: 3em;
+    width: 8em;
+    border: none;
+    border-radius: 32px;
+    transition: background-color .3s;
+}
+
+.btnBasic:hover {
+    cursor: pointer;
+    background-color: $PrimaryDark;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 1em;
+        flex-direction: column-reverse;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .container {
+        padding: 3em 1em;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+// info start
+
+.info {
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    color: $myDark;
+    margin: 2em auto;
+    
+    &__text {
+        padding: 1em 0;
+        text-align: justify;
+    }
+}
+
+.picture  {
+    max-width: 505px;
+    max-height: 330px;
+    margin: 2em auto;
+    img {
+        object-fit: cover;
+        width: 100%;
+        }
+}
+
+@media screen and (min-width: 768px) {
+    .info {
+        padding: 2em 0;
+    }
+}
+
+// info end
+// modal start
+
+.modal {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    top: -150%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    height: 12em;
+    padding: 1em 2em;
+    z-index: 2;
+    background-color: $myLight;
+
+    &__btnClose {
+        width: 2em;
+        height: 2em;
+        align-self: flex-end;
+        border: none;
+        background-color: $myLight;
+        transition: box-shadow .5s;
+    }
+
+    &__btnClose:hover {
+        -webkit-box-shadow: inset 4px 4px 16px -4px rgba(66, 68, 90, 1);
+        -moz-box-shadow: inset 4px 4px 16px -4px rgba(66, 68, 90, 1);
+        box-shadow: inset 4px 4px 16px -4px rgba(66, 68, 90, 1);
+        cursor: pointer;
+    }
+
+    &__text {
+        text-align: justify;
+    }
+}
+
+// modal end
+
+.shadow {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #121212, $alpha: .5);
 }

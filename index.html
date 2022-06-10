@@ -18,18 +18,23 @@
     <div class="info">
         <h2 class="info__title">Lorem, ipsum.</h2>
         <p class="info__text">Infinitely scalable, feature-rich and cloud-native data management and protection for modern and legacy infrastructures and SaaS platforms, managed via a single app with no hardware required.</p>
-        <button class="info__btn">Button</button>
+        <button class="info__btn btnBasic">Button</button>
     </div>
 
-    <img src="./images/seaMobile.jpg" alt="sunset in the seaside">
-
+    <!-- <img class="img" src="./images/seaMobile.jpg" alt="sunset in the seaside"> -->
+    <picture class="picture">
+        <source media="(min-width:1200px)" srcset="./images/seaDesktop.jpg">
+        <source media="(min-width:768px)" srcset="./images/seaTablet.jpg">
+        <img src="./images/seaMobile.jpg" alt="sunset in the seaside">
+    </picture>
+    
 </div>
 
 <div class="modal">
-    <button class="modal__btn__close"><i class="fas fa-times"></i></button>
-    <p class="modal__alert">Alert!</p>
+    <button class="modal__btnClose"><i class="fas fa-times"></i></button>
+    <h1 class="modal__alert">Alert!</h3>
     <p class="modale__text">You have clicked <span class="modale__text__span">X</span> times to related button.</p>
-    <button class="modal__btn__reset">Reset clicks</button>
+    <button class="modal__btnReset btnBasic">Reset clicks</button>
 </div>
 
 <div class="shadow"></div>
