@@ -6,6 +6,7 @@ const modalTextSpan = document.querySelector('.modal__text__span')
 const modalBtnReset = document.querySelector('.modal__btnReset')
 let numOfClick = 0
 
+// Function mainAction starts functions: showModal, countClicks and showReserBtn.
 const mainAction = () => {
     showModal()
     countClicks()
@@ -20,6 +21,7 @@ const showModal = () => {
     modal.style.top = '50%'
 }
 
+
 const countClicks = () => {
     numOfClick++
     modalTextSpan.textContent = numOfClick
@@ -30,10 +32,8 @@ const showResetBtn = () => {
     modalBtnReset.style.visibility = 'visible'
 }
 
-const closeResetBtn = () => {
-    modalBtnReset.style.visibility = 'hidden'
-}
 
+// These function resets number of clicks, cleans span, cleans local storage and closes reser btn.
 const resetClicks = () => {
     numOfClick = 0
     modalTextSpan.textContent = numOfClick
@@ -41,11 +41,16 @@ const resetClicks = () => {
     closeResetBtn()
 }
 
+const closeResetBtn = () => {
+    modalBtnReset.style.visibility = 'hidden'
+}
+
+
+// These function closes modal and shadow
 const closeModal = () => {
     shadow.style.display = 'none'
     modal.style.top = '-50%'
 }
-
 
 
 infoBtn.addEventListener('click', mainAction)
